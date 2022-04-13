@@ -1,20 +1,20 @@
 '''reducer'''
+#!/usr/bin/env python3
 import sys
 from random import randint
 
-def read_mapper_output(files):
-    '''read mapper output'''
-    for line in files:
-        yield line[1:].strip()
 
 def main():
     '''main fun'''
-    ids = read_mapper_output(sys.stdin)
-
+    print('saassasa')
     index = 0
     new_line = False
 
-    for word_id in ids:
+    for line in sys.stdin:
+        line = line.strip('\n').strip("\t")
+        prefix, word_id = line.split(",")
+
+
         if index == 0:
             index = randint(1, 5)
             if new_line:
@@ -27,3 +27,5 @@ def main():
         new_line = True
         index -= 1
     print()
+
+main()
