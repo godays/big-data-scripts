@@ -6,7 +6,6 @@ from random import randint
 
 def main():
     '''main fun'''
-    print('saassasa')
     index = 0
     new_line = False
 
