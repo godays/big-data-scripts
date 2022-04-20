@@ -27,7 +27,7 @@ hdfs dfs -rm -r -skipTrash ${OUTPUT_HDFS_PATH}
 
 # Global sorting as we use only 1 reducer
 yarn jar $HADOOP_STREAMING_JAR \
-    -files reducer_task2.py \
+    -files reducer_2.py \
     -D mapreduce.job.name=JOB_NAME \
     -D stream.num.map.output.key.fields=3 \
     -D mapreduce.job.output.key.comparator.class=org.apache.hadoop.mapreduce.lib.partition.KeyFieldBasedComparator \
