@@ -18,10 +18,10 @@ for line in sys.stdin:
     tags = re.findall(r'Tags=\"(([\s\S]+?))\"', line)
 
     if tags:
-        for cur_res in tags:
-            tags_new = re.findall(r'&lt;(([\s\S]+?))&gt;', cur_res[0])
-            for cur_res2 in tags_new:
+        for tag in tags:
+            tags_new = re.findall(r'&lt;(([\s\S]+?))&gt;', tag[0])
+            for tag2 in tags_new:
                 if int(date_year) == 2010:
-                    print(date_year, cur_res2[0], 1, sep="\t")
+                    print(date_year, tag2[0], 1, sep="\t")
                 elif int(date_year) == 2016:
-                    print(date_year, cur_res2[0], 1, sep="\t")
+                    print(date_year, tag2[0], 1, sep="\t")
