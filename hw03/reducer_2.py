@@ -2,11 +2,9 @@
 #!/usr/bin/env python3
 import sys
 
-cur_wrd = ''
-wrd_cnt = 0
-cnter_2010 = 0
-cnter_2016 = 0
-top = 10
+CNTER_2010 = 0
+CNTER_2016 = 0
+TOP = 10
 
 for line in sys.stdin:
     line = line.strip('\n').strip("\t")
@@ -17,13 +15,13 @@ for line in sys.stdin:
     wrd_cnt = cnt
 
     if year == 2010:
-        if cnter_2010 < top:
+        if CNTER_2010 < TOP:
             print(year, cur_wrd, wrd_cnt, sep="\t")
-            if cnter_2010 < top:
-                cnter_2010 += 1
+            if CNTER_2010 < TOP:
+                CNTER_2010 += 1
 
     elif year == 2016:
-        if cnter_2016 < top:
+        if CNTER_2016 < TOP:
             print(year, cur_wrd, wrd_cnt, sep="\t")
-            if cnter_2016 < top:
-                cnter_2016 += 1
+            if CNTER_2016 < TOP:
+                CNTER_2016 += 1

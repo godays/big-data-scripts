@@ -6,13 +6,13 @@ import re
 
 
 for line in sys.stdin:
-    crd = 'CreationDate="'
-    date_ind = line.find(crd)
+    CRD = 'CreationDate="'
+    date_ind = line.find(CRD)
 
     if date_ind == -1:
         continue
 
-    start = date_ind + len(crd)
+    start = date_ind + len(CRD)
     date_year = line[start:start+4]
 
     tags = re.findall(r'Tags=\"(([\s\S]+?))\"', line)

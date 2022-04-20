@@ -2,8 +2,8 @@
 #!/usr/bin/env python3
 import sys
 
-wrd_cnt = 0
-cur_wrd = None
+WRD_CNT = 0
+CUR_WRD = ''
 
 for line in sys.stdin:
     line = line.strip('\n').strip("\t")
@@ -11,13 +11,13 @@ for line in sys.stdin:
     cnt = int(cnt)
     year = int(year)
 
-    if word == cur_wrd:
-        wrd_cnt += cnt
+    if word == CUR_WRD:
+        WRD_CNT += cnt
     else:
-        if cur_wrd:
-            print(year, cur_wrd, wrd_cnt, sep="\t")
-        cur_wrd = word
-        wrd_cnt = cnt
+        if CUR_WRD:
+            print(year, CUR_WRD, WRD_CNT, sep="\t")
+        CUR_WRD = word
+        WRD_CNT = cnt
 
-if cur_wrd:
-    print(year, cur_wrd, wrd_cnt, sep="\t")
+if CUR_WRD:
+    print(year, CUR_WRD, WRD_CNT, sep="\t")
